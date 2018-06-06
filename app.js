@@ -3,7 +3,7 @@ $(document).ready(function(){
   $('.setData').on('click', function() {
     let textFieldValue = $('.textField').val();
     let snippetValue = $('.snippetField').val();
-    localStorage.setItem(JSON.stringify(textFieldValue), JSON.stringify(snippetValue));
+    localStorage.setItem(textFieldValue, snippetValue);
     // $('.textField').val('');
     // $('.snippetField').val('')
    // 	$('.debug').text(textFieldValue);
@@ -16,11 +16,11 @@ $(document).ready(function(){
  	 // $('.snippetDisplay').remove();
  	 const snippetArray = [];
  	 
-    for (var i = 0; i < localStorage.length; i++) {
+    for (let i = 0; i < localStorage.length; i++) {
     	if(localStorage.key(i) && localStorage.getItem(localStorage.key(i))) {
-    		console.log(localStorage.key(i) + ':' + localStorage.getItem(localStorage.key(i)));
-    		snippetArray.push(JSON.parse(localStorage.key(i)) + ':' + JSON.parse(localStorage.getItem(localStorage.key(i))));
-    		
+    		// console.log(localStorage.key(i) + ':' + localStorage.getItem(localStorage.key(i)));
+    		snippetArray.push(localStorage.key(i) + ':' + localStorage.getItem(localStorage.key(i)));
+
     	}
 
  //   	retrievedData.appendTo(snippetDisplay)
@@ -30,4 +30,11 @@ $(document).ready(function(){
  //   $('.debug').text(retrievedData);
   });
 
+  $('.search').on('click', function() {
+  	console.log('hi')
+  	let searchField = $('.searchBar').val();
+  	$('.snippetDisplay').replaceWith($('<div class="snippetDisplay">' + localStorage.getItem(searchField) + '</div>'))
+  	console.log(localStorage.getItem(searchField))
+  	console.log(searchField)
+  });
 });
