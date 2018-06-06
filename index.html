@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title></title>
-	<script src="https://code.jquery.com/jquery-3.3.1.js"
-            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
-            crossorigin="anonymous">
-	</script>
-	<script src="app.js"></script>
+	 <meta charset="UTF-8">
+     <title>My First CRUD App</title>
+  	 <script src="libs/jquery.js"></script>
+	 <script src="app.js"></script>
+	 <link rel="stylesheet" type="text/css" href="main.css">
 </head>
 <body>
-
-	<input class="textField" type="text" name="firstInputField">
-	<button class="getData">Click to save text</button>
-	<button class="setData">Click to save text</button>
+	 <input class="textField" type="text" name="firstInputField">
+	 <textarea class ="snippetField" rows="8" cols= "5" type="text"></textarea>
+	  <button class="setData">Save Snippet</button>
+	  <button class="getData">Display All Snippets</button>
+	  <div class="snippetContainer"></div>
+	 <div class="snippetDisplay"></div>
+	
 <div class="debug"></div>
 
 </body>
